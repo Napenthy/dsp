@@ -40,7 +40,19 @@ sorted(NHLmetro, key=lambda x:len(x))
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehension is a way to create a list of numbers with one line of code, rather than typing a list out or using a loop. 
+The following examples will print '1, 2, 3, 4, 5, 6, 7, 8, 9, 10'
+List: 
+  Top10=[i for i in range(1,11)] 
+Map:
+  map_Top10= map(lambda i: i, range(1,10))
+Filter:
+  filter_Top10 = filter(lambda s: s, Top10)
+Set Comprehension:
+  set_Top10 = [q for q in range(1,11)]
+Dictionary Comprehension:
+  dic_Top10 = {x: x**2 for x in Top10} '''returns dicitonary of the square of each element within Top10
+
 
 ---
 
