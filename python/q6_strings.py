@@ -18,7 +18,10 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    if count < 10:
+        print 'Number of dounuts: ', str(count)
+    else:
+        print 'Number of donuts: many'
 
 
 def both_ends(s):
@@ -37,7 +40,8 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    if len(s)> 2:
+        print s[:2]+s[-2:]
 
 
 def fix_start(s):
@@ -56,7 +60,9 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    x = s[0]
+    y = s[1:]
+    return x+y.replace(x,'*')
 
 
 def mix_up(a, b):
@@ -74,7 +80,9 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    new_a = b[:2] + a[2:]
+    new_b = a[:2] + b[2:]
+    print(new_a + str(' ') + new_b)
 
 
 def verbing(s):
@@ -91,7 +99,12 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+        if len(s) < 3:
+        return s
+    elif s[-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 
 def not_bad(s):
@@ -111,7 +124,17 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    x = 'not'
+    y = 'bad'
+    if x in s and y in s:
+        a = s.index(x)
+        b = s.index(y)
+        if s.index(x)<s.index(y):
+            return s[:a] + 'good' + s[b+3:]
+        else:
+            return s
+    else:
+        return s
 
 
 def front_back(a, b):
@@ -130,4 +153,17 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    if len(a)%2==0:
+        afirst = a[0:(len(a)/2)]
+        asecond = a[len(a)/2:]
+    else:
+        afirst = a[0:((len(a)/2)+1)]
+        asecond = a[(len(a)/2)+1:]
+    if len(b)%2==0:
+        bfirst = b[0:(len(b)/2)]
+        bsecond = b[len(b)/2:]
+    else:
+        bfirst = b[0:((len(b)/2)+1)]
+        bsecond = b[(len(b)/2)+1:] 
+    return afirst+bfirst+asecond+bsecond      
+        
