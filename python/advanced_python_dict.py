@@ -6,7 +6,6 @@ professor_dict = {}
 
 with open('faculty.csv', 'rb') as f:
     faculty = csv.reader(f)
-#    header = faculty.next()
     for name, degree, title, email in faculty:
         first = name.split()[0]
         last = name.split()[-1]
